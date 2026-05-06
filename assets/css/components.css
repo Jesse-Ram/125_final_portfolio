@@ -1,0 +1,262 @@
+/* ─────────────────────────────────────────
+   COMPONENTS.CSS — Cards, Callouts, Lists
+   ───────────────────────────────────────── */
+
+/* ── Card ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: var(--sand-dark);
+  box-shadow: 0 4px 24px rgba(30, 26, 22, 0.06);
+}
+
+.card__eyebrow {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+
+.card__body {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ── Callout / pull-quote ── */
+.callout {
+  border-left: 3px solid var(--terracotta);
+  padding: 16px 24px;
+  background: rgba(180, 92, 56, 0.05);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 2rem 0;
+}
+
+.callout p {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.callout--olive {
+  border-color: var(--olive);
+  background: rgba(90, 107, 58, 0.05);
+}
+
+/* ── Reading item (for references / resources) ── */
+.reading-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+.reading-item:last-child { border-bottom: none; }
+
+.reading-item__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+  padding-top: 1px;
+  min-width: 24px;
+}
+
+.reading-item__text {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.reading-item__text strong { font-weight: 500; color: var(--ink); }
+.reading-item__text em { font-style: italic; }
+
+/* ── Two-column grid ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ── Stat / highlight box ── */
+.stat-box {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+
+.stat-box__num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--terra-light);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-box__label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+}
+
+/* ── Timeline ── */
+.timeline { position: relative; padding-left: 28px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--sand);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 2px solid var(--cream);
+  box-shadow: 0 0 0 1px var(--terracotta);
+}
+
+.timeline-item__date {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.timeline-item h4 { margin-bottom: 4px; }
+.timeline-item p { margin: 0; font-size: 0.875rem; }
+
+/* ── Table of contents card ── */
+.toc {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 2.5rem;
+}
+
+.toc__title {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+}
+
+.toc ol li {
+  counter-increment: toc-counter;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--sand);
+  font-size: 0.875rem;
+}
+
+.toc ol li:last-child { border-bottom: none; }
+
+.toc ol li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+.toc ol li a { color: var(--ink-muted); }
+.toc ol li a:hover { color: var(--terracotta); }
+
+/* ── Progress/score chip ── */
+.score-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sand);
+  border-radius: 100px;
+  padding: 4px 12px 4px 8px;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.score-chip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--olive);
+}
+
+.text-with-image {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.text-with-image .text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.text-with-image .image {
+  flex: 0 0 420px;
+}
+
+.text-with-image .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

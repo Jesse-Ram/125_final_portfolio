@@ -1,0 +1,238 @@
+/* ─────────────────────────────────────────
+   GLOBAL.CSS  — Earth Tone Portfolio
+   ───────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ── Tokens ── */
+:root {
+  --cream: #f4ede0;
+  --sand: #e2d0b8;
+  --sand-dark: #c9b89a;
+  --terracotta: #b85c38;
+  --terra-light: #d4795a;
+  --terra-dark: #8f3f22;
+  --olive: #5a6b3a;
+  --olive-light: #7a8f52;
+  --olive-dark: #3d4a27;
+  --ink: #1e1a16;
+  --ink-muted: #5a5048;
+  --ink-faint: #9a8e82;
+  --white: #fffaf4;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --nav-width: 260px;
+  --radius: 6px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  /* grain texture overlay */
+  position: relative;
+}
+
+/* subtle grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── Layout shell ── */
+#app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.main-content {
+  margin-left: var(--nav-width);
+  padding: 64px 72px;
+  max-width: 860px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeUp 0.6s var(--ease-out) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Typography ── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  color: var(--ink);
+}
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 1rem;
+  color: var(--olive);
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--ink-muted);
+  font-size: 0.975rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--terra-dark);
+}
+
+em {
+  font-style: italic;
+  color: var(--ink);
+}
+strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ── Dividers ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--sand);
+  margin: 2.5rem 0;
+}
+
+.divider--terra {
+  border-color: var(--terracotta);
+  opacity: 0.3;
+}
+
+/* ── Section spacing ── */
+.section {
+  margin-bottom: 3.5rem;
+}
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ── Tags / pills ── */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--sand);
+  color: var(--ink-muted);
+  margin: 3px 4px 3px 0;
+}
+.tag--olive {
+  background: #dde3d4;
+  color: var(--olive-dark);
+}
+.tag--terra {
+  background: #f0d8cf;
+  color: var(--terra-dark);
+}
+
+/* ── Page header ── */
+.page-header {
+  margin-bottom: 3rem;
+}
+.page-header .section-label {
+  margin-bottom: 0.5rem;
+}
+.page-header h1 {
+  margin-bottom: 0.75rem;
+}
+.page-header .lead {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 560px;
+  line-height: 1.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 24px 24px 80px;
+  }
+}
+
+/* Centering fallback if sidebar fails */
+#app:not(:has(.sidebar)) .main-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#citations {
+  scroll-margin-top: 40px;
+}

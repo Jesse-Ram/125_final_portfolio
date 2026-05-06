@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Engineering Ethics</title>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+
+    <style>
+            /* Cover-page specific styles */
+            .cover {
+              padding-top: 80px;
+            }
+
+            .cover__kicker {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 2rem;
+            }
+
+            .cover__kicker-line {
+              width: 40px;
+              height: 1px;
+              background: var(--terracotta);
+            }
+
+            .cover__kicker span {
+              font-size: 0.7rem;
+              letter-spacing: 0.2em;
+              text-transform: uppercase;
+              color: var(--ink-faint);
+            }
+
+            .cover h1 {
+              font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+              font-weight: 300;
+              line-height: 1.1;
+              margin-bottom: 1.5rem;
+              max-width: 700px;
+            }
+
+            .cover h1 em {
+              font-style: italic;
+              color: var(--terracotta);
+            }
+
+            .cover__meta {
+              display: flex;
+              gap: 32px;
+              flex-wrap: wrap;
+              margin-bottom: 3.5rem;
+            }
+
+            .cover__meta-item {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+            }
+
+            .cover__meta-label {
+              font-size: 0.62rem;
+              font-weight: 500;
+              letter-spacing: 0.15em;
+              text-transform: uppercase;
+              color: var(--ink-faint);
+            }
+
+            .cover__meta-value {
+              font-size: 0.875rem;
+              color: var(--ink-muted);
+            }
+
+            /* ── Graphical abstract area ── */
+            .abstract-container {
+              background: var(--white);
+              border: 1px solid var(--sand);
+              border-radius: var(--radius);
+              padding: 40px;
+              margin-bottom: 3.5rem;
+              position: relative;
+              overflow: hidden;
+            }
+
+            .abstract-container::after {
+              content: "GRAPHICAL ABSTRACT";
+              position: absolute;
+              top: 16px;
+              right: 20px;
+              font-size: 0.6rem;
+              letter-spacing: 0.2em;
+              color: var(--sand-dark);
+            }
+
+            /* Placeholder diagram — replace with your own image */
+            S.abstract-node {
+              text-align: center;
+              padding: 20px 12px;
+            }
+
+            .abstract-node__circle {
+              width: 72px;
+              height: 72px;
+              border-radius: 50%;
+              margin: 0 auto 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: var(--font-display);
+              font-size: 1.6rem;
+              font-weight: 300;
+            }
+
+            .circle--terra {
+              background: rgba(180, 92, 56, 0.12);
+              color: var(--terracotta);
+            }
+            .circle--olive {
+              background: rgba(90, 107, 58, 0.12);
+              color: var(--olive);
+            }
+            .circle--sand {
+              background: var(--sand);
+              color: var(--ink-muted);
+            }
+
+            .abstract-node__label {
+              font-size: 0.75rem;
+              font-weight: 500;
+              color: var(--ink);
+              display: block;
+              margin-bottom: 4px;
+            }
+
+            .abstract-node__sub {
+              font-size: 0.65rem;
+              color: var(--ink-faint);
+              line-height: 1.4;
+            }
+
+            .abstract-connector {
+              height: 1px;
+              background: linear-gradient(to right, var(--terracotta), var(--olive));
+              opacity: 0.3;
+            }
+
+            /* ── Overarching question banner ── */
+            .question-banner {
+              background: var(--ink);
+              color: var(--cream);
+              border-radius: var(--radius);
+              padding: 32px 36px;
+              margin-bottom: 3rem;
+            }
+
+            .question-banner__label {
+              font-size: 0.62rem;
+              letter-spacing: 0.2em;
+              text-transform: uppercase;
+              color: var(--terra-light);
+              display: block;
+              margin-bottom: 10px;
+            }
+
+            .question-banner p {
+              font-family: var(--font-display);
+              font-size: 1.25rem;
+              font-style: italic;
+              color: var(--cream);
+              margin: 0;
+              line-height: 1.5;
+            }
+
+            /* ── Quick nav cards ── */
+            .quick-nav {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+              gap: 1rem;
+              margin-top: 2rem;
+            }
+
+            .quick-card {
+              background: var(--white);
+              border: 1px solid var(--sand);
+              border-radius: var(--radius);
+              padding: 20px 22px;
+              text-decoration: none;
+              transition: all 0.2s var(--ease-out);
+              display: block;
+            }
+
+            .quick-card:hover {
+              border-color: var(--terracotta);
+              transform: translateY(-2px);
+              box-shadow: 0 6px 24px rgba(30, 26, 22, 0.07);
+            }
+
+            .quick-card__num {
+              font-family: var(--font-display);
+              font-size: 1.4rem;
+              color: var(--sand-dark);
+              display: block;
+              margin-bottom: 6px;
+            }
+
+            .quick-card__title {
+              font-size: 0.875rem;
+              font-weight: 500;
+              color: var(--ink);
+              display: block;
+              margin-bottom: 4px;
+            }
+
+            .quick-card__desc {
+              font-size: 0.75rem;
+              color: var(--ink-faint);
+              line-height: 1.4;
+            }
+    </style>
+  </head>
+
+  <body data-page="home">
+    <div id="app">
+      <div id="nav-placeholder"></div>
+
+      <main class="main-content cover">
+        <div class="cover__kicker">
+          <div class="cover__kicker-line"></div>
+          <span>Engineering Ethics Portfolio</span>
+        </div>
+
+        <h1>Ethics, Engineering,<br />and <em>Society</em></h1>
+
+        <div class="cover__meta">
+          <div class="cover__meta-item">
+            <span class="cover__meta-label">Author</span>
+            <span class="cover__meta-value">Jesse Ramirez</span>
+          </div>
+          <div class="cover__meta-item">
+            <span class="cover__meta-label">Course</span>
+            <span class="cover__meta-value"
+              >Engineering Ethics · UC Berkeley</span
+            >
+          </div>
+          <div class="cover__meta-item">
+            <span class="cover__meta-label">Date</span>
+            <span class="cover__meta-value">May 2026</span>
+          </div>
+          <div class="cover__meta-item">
+            <span class="cover__meta-label">Instructor</span>
+            <span class="cover__meta-value">Prof. Scarlat</span>
+          </div>
+        </div>
+
+        <!-- Overarching question -->
+        <div class="question-banner">
+          <span class="question-banner__label">Overarching Question</span>
+          <p>
+            What is the relationship between ethics, engineering and society —
+            and where is my place in this picture?
+          </p>
+        </div>
+
+        <!-- Graphical Abstract -->
+        <div class="abstract-container">
+          <img 
+            src="assets/images/ethics_engineering_society_graphical_abstract_v2.png"
+            alt="Graphical abstract showing the relationship between ethics, engineering, and society"
+            style="width: 100%; display: block; border-radius: var(--radius);"
+          />
+        </div>
+
+        <hr class="divider" />
+
+        <h2>Portfolio Contents</h2>
+        <p>
+          Navigate through the sections below or use the sidebar. Each section
+          corresponds to an assignment or reflection from the semester.
+        </p>
+
+        <div class="quick-nav">
+          <a href="pages/final-reflection.html" class="quick-card">
+            <span class="quick-card__num">01</span>
+            <span class="quick-card__title">Final Reflection</span>
+            <span class="quick-card__desc"
+              >The overarching essay on ethics, engineering, and society</span
+            >
+          </a>
+
+          <a href="pages/annexe.html" class="quick-card">
+            <span class="quick-card__num">02</span>
+            <span class="quick-card__title">Annexe</span>
+            <span class="quick-card__desc"
+              >15 concepts, 8 EiN cases, and extended reading analysis</span
+            >
+          </a>
+
+          <a href="pages/learning-plan.html" class="quick-card">
+            <span class="quick-card__num">03</span>
+            <span class="quick-card__title">Future Learning Plan</span>
+            <span class="quick-card__desc"
+              >Habits, resources, and goals going forward</span
+            >
+          </a>
+
+          <a href="pages/critical-reflection.html" class="quick-card">
+            <span class="quick-card__num">04</span>
+            <span class="quick-card__title">Critical Reflection</span>
+            <span class="quick-card__desc"
+              >Deep-dive reflection on a theme from the semester</span
+            >
+          </a>
+
+          <a href="pages/interview.html" class="quick-card">
+            <span class="quick-card__num">05</span>
+            <span class="quick-card__title">Interview Summary</span>
+            <span class="quick-card__desc"
+              >Practitioner perspectives on engineering ethics</span
+            >
+          </a>
+
+          <a href="pages/ethics-in-news.html" class="quick-card">
+            <span class="quick-card__num">06</span>
+            <span class="quick-card__title">Ethics in the News</span>
+            <span class="quick-card__desc"
+              >Analysis of orbital edge computing and space ethics</span
+            >
+          </a>
+
+          <a href="pages/ein-review.html" class="quick-card">
+            <span class="quick-card__num">07</span>
+            <span class="quick-card__title">EiN Review</span>
+            <span class="quick-card__desc"
+              >Final reviewer analysis of assigned author's work</span
+            >
+          </a>
+
+          <a href="pages/project-proposal.html" class="quick-card">
+            <span class="quick-card__num">08</span>
+            <span class="quick-card__title">Project Proposal</span>
+            <span class="quick-card__desc"
+              >Initial space debris project proposal and plan</span
+            >
+          </a>
+
+          <a href="pages/group-project-write-up.html" class="quick-card">
+            <span class="quick-card__num">09</span>
+            <span class="quick-card__title">Group Project Write-Up</span>
+            <span class="quick-card__desc"
+              >Final group write-up on space debris and engineering ethics</span
+            >
+          </a>
+
+          <a href="pages/civic-engagement.html" class="quick-card">
+            <span class="quick-card__num">10</span>
+            <span class="quick-card__title">Civic Engagement</span>
+            <span class="quick-card__desc"
+              >Space debris commentary and ethics analysis</span
+            >
+          </a>
+
+          <a href="pages/personal-reflection.html" class="quick-card">
+            <span class="quick-card__num">11</span>
+            <span class="quick-card__title">Personal Reflection</span>
+            <span class="quick-card__desc"
+              >Individual reflection and peer evaluation</span
+            >
+          </a>
+
+          <a href="pages/about.html" class="quick-card">
+            <span class="quick-card__num">12</span>
+            <span class="quick-card__title">About Me</span>
+            <span class="quick-card__desc"
+              >Background, interests, and where I am headed</span
+            >
+          </a>
+
+          <a href="pages/ai-acknowledgment.html" class="quick-card">
+            <span class="quick-card__num">13</span>
+            <span class="quick-card__title">AI Acknowledgment</span>
+            <span class="quick-card__desc"
+              >Disclosure of AI tools used in this portfolio</span
+            >
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>

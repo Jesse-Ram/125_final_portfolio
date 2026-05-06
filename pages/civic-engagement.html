@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Engagement — Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/nav.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+
+    <style>
+      .text-with-image {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+
+      .text-with-image img {
+        width: 280px;
+        flex-shrink: 0;
+        border-radius: var(--radius);
+        border: 1px solid var(--sand);
+      }
+
+      .essay-body p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--ink-muted);
+        margin-bottom: 1.5rem;
+        max-width: 680px;
+      }
+
+      .essay-body h3 {
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .abstract-box {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-left: 3px solid var(--terracotta);
+        border-radius: var(--radius);
+        padding: 24px 28px;
+        margin-bottom: 2.5rem;
+        max-width: 680px;
+      }
+
+      .abstract-box .label {
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .abstract-box p {
+        font-size: 0.9rem;
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin: 0 0 1rem 0;
+      }
+
+      .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      @media (max-width: 600px) {
+        .text-with-image {
+          flex-direction: column;
+        }
+        .text-with-image img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-page="civic-engagement">
+    <div id="app">
+      <div id="nav-placeholder"></div>
+
+      <main class="main-content">
+        <div class="page-header">
+          <span class="section-label"
+            >Group Assignment · Civic Engagement Project</span
+          >
+          <h1>Space Debris and the Ethics of Responsibility</h1>
+          <p class="lead">
+            Erin Tiha, Kashvi Bhatia, Jesse Ramirez, Raul Hernandez, Jenny
+            Zhang, Yuanyuan Ma
+          </p>
+        </div>
+
+        <!-- Abstract -->
+        <div class="abstract-box">
+          <span class="label">Abstract</span>
+          <p>
+            Space debris has become a major ethical and engineering challenge as
+            Earth's orbital environment grows increasingly congested with
+            defunct satellites and rocket fragments. While space activity
+            continues to expand, current governance has gaps and is often
+            dependent on voluntary compliance. This commentary argues that space
+            debris should be understood not only as a technical issue but also
+            through the lens of engineering ethics. Drawing on current
+            mitigation policies and international regulatory gaps, this paper
+            shows how debris generation threatens satellites, human spaceflight,
+            communication systems, and the long-term sustainability of orbital
+            space. The discussion applies utilitarianism and deontology to
+            evaluate the responsibilities of engineers, governments, and
+            commercial actors. The paper concludes that stronger international
+            enforcement, improved spacecraft design standards, economic
+            accountability mechanisms, and investment in active debris removal
+            are necessary.
+          </p>
+          
+          <div class="keywords">
+            <span class="tag">Space debris</span>
+            <span class="tag tag--terra">Engineering ethics</span>
+            <span class="tag tag--olive">Orbital sustainability</span>
+            <span class="tag">Space governance</span>
+            <span class="tag">Active debris removal</span>
+            <span class="tag tag--terra">Global commons</span>
+          </div>
+        </div>
+          
+
+        <!-- Essay Body -->
+        <div class="essay-body">
+          <p>
+            There are a few laws and regulations in place for space debris. The
+            first being the US Orbital Debris Mitigation Standard Practices
+            (ODMSP), first established in 2001 and most recently updated in
+            2019. The goal of the ODMSP is to address the increase in space
+            debris and minimize its growth going forward. Some of the
+            regulations include a limit on how much space debris is allowed, a
+            prohibition on intentional destruction that would create significant
+            debris, and a requirement that stored energy be depleted after use.
+          </p>
+
+          <p>
+            The Federal Communications Commission (FCC) adopted the 5-year rule
+            in 2022, requiring that satellites in low orbit be disposed of
+            within five years of post-mission. Outside of the US, the European
+            Space Agency (ESA) adopted its Zero Debris approach in 2023 
+            requiring a greater than 90% probability of successful disposal,
+            prohibiting the release of particles larger than 1mm, and mandating
+            that spacecraft be designed with interfaces for debris removal. The
+            UN Office of Outer Space Affairs (UNOOSA) similarly calls for
+            post-mission disposal and protection of key orbital regions
+            including Low Earth Orbit (LEO) and Geosynchronous Earth Orbit
+            (GEO).
+          </p>
+
+          <p>
+            However, these regulations have significant gaps. The UNOOSA
+            guidelines are voluntary and cannot be strictly enforced, there is
+            no penalty for countries that choose not to follow them. Even the
+            ESA's stricter approach lacks consequences for spacecraft that fail
+            to meet requirements. In 2022, only 55% of satellites followed
+            through with orbit clearance recommendations. The rules need to be
+            stronger, and compliance cannot remain optional.
+          </p>
+
+          <p>
+            The 2007 Chinese anti-satellite test (ASAT) is one of the most
+            consequential case studies in space debris ethics. China
+            intentionally destroyed its Fengyun-1C weather satellite to
+            demonstrate technological superiority, leaving behind one of the
+            largest debris fields ever created. Because the destruction occurred
+            at high altitude, the fragments will remain in orbit for years. The
+            Russian BLITS satellite was knocked out of trajectory by resulting
+            fragments, and thousands of conjunctions have been recorded since.
+            More importantly, by deliberately creating a hazard affecting global
+            satellite infrastructure, GPS, climate monitoring, financial
+            transactions, communications, China raised a fundamental ethical
+            question: is it justifiable for a single nation to degrade shared
+            orbital infrastructure for nationalistic benefit?
+          </p>
+
+          <p>
+            The ASAT incident also exposed the weakness of international space
+            governance. The Outer Space Treaty of 1967 is outdated, lacks
+            precise definitions, and relies on voluntary compliance rather than
+            binding law. These gaps create conditions for future
+            irresponsibility at scale.
+          </p>
+
+          <p>
+            Astroscale and ClearSpace represent a different response — companies
+            actively developing debris removal and in-orbit servicing
+            technology. Astroscale's ADRAS-J mission is the world's first
+            attempt to safely approach and extract large debris through
+            proximity operations. ClearSpace-1, commissioned by ESA, is designed
+            to remove the PROBA-1 satellite from orbit, the first mission of
+            its kind. These companies are important not only as technical
+            demonstrations but as ethical ones: they show that engineers and
+            institutions are beginning to accept responsibility for the
+            long-term consequences of space activity. They also reveal the
+            limitation of leaving orbital sustainability to voluntary
+            initiative. Without binding obligations, cleanup remains optional
+            while debris accumulates.
+          </p>
+
+          <p>
+            According to NASA, there are millions of pieces of space debris in
+            low Earth orbit, traveling at up to 18,000 miles per hour. At these
+            speeds, even small fragments can severely damage or destroy
+            spacecraft. Much of this debris cannot be tracked, creating risks
+            that engineers cannot fully predict or control. Micrometeoroids and
+            orbital debris (MMOD) are considered the single biggest risk to
+            NASA's human spaceflight programs.
+          </p>
+
+          <p>
+            The ethics of space debris are best understood through two
+            frameworks covered in this course. From a utilitarian perspective,
+            space debris threatens infrastructure that billions of people depend
+            on, the overwhelming majority of whom have no role in generating
+            it. The 2007 ASAT test is a clear utilitarian failure: the harms
+            imposed on global space infrastructure vastly outweigh any benefit
+            received by the acting state. Voluntary compliance regimes make this
+            problem structural: operators can externalize costs onto the commons
+            while retaining private benefits. A 2024 NASA cost-benefit analysis
+            found that active debris removal produces benefits far exceeding
+            upfront costs, yet investment remains misaligned with that reality.
+          </p>
+
+          <p>
+            From a deontological perspective, engineers designing satellites and
+            space systems have a duty to protect shared resources regardless of
+            outcome. Even if orbital computing or debris-generating activity
+            offers benefits, that does not remove the professional obligation to
+            design responsibly, disclose risks, and plan for decommissioning.
+            Engineers cannot outsource that responsibility to regulators or
+            commercial incentives.
+          </p>
+
+          <p>
+            Addressing space debris requires four categories of reform. First,
+            the transition from voluntary guidelines to binding international
+            obligations with enforceable sanctions. A UN-level body modeled on
+            the Intergovernmental Panel on Climate Change has been proposed as a
+            mechanism to unify standards. Second, market-focused instruments,
+            launch and orbital taxes, debris offset markets, that align private
+            operator incentives with collective orbital health. Third,
+            accelerated investment in active debris removal technology, with
+            standardized qualification frameworks to reduce regulatory
+            uncertainty for commercial providers. Fourth, data sharing and
+            transparency reform, moving away from military-controlled space
+            monitoring toward a system that supports international cooperation.
+          </p>
+
+          <p>
+            The orbital environment is a shared commons. Its long-term viability
+            demands that responsibility be collective, legislative, and oriented
+            toward sustainability, not left to voluntary effort and commercial
+            initiative.
+          </p>
+        </div>
+
+        <!-- Works Cited -->
+        <hr class="divider" style="margin-top: 3rem" />
+
+        <section id="works-cited" style="margin-top: 2rem">
+          <span class="section-label">Works Cited</span>
+
+          <div class="reading-item">
+            <span class="reading-item__num">01</span>
+            <div class="reading-item__text">
+              Astroscale. (n.d.). ADRAS-J Mission: Astroscale's debris
+              inspection milestone.
+              <a
+                href="https://www.astroscale.com/en/missions/adras-j"
+                target="_blank"
+                >astroscale.com</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">02</span>
+            <div class="reading-item__text">
+              Astroscale. (n.d.). ELSA-d Mission: Astroscale's debris removal
+              milestone.
+              <a
+                href="https://www.astroscale.com/en/missions/elsa-d"
+                target="_blank"
+                >astroscale.com</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">03</span>
+            <div class="reading-item__text">
+              Bennett, M. (2025). Orbital debris requires prevention and
+              mitigation across the satellite life cycle.
+              <em>Communications Engineering.</em>
+              <a
+                href="https://doi.org/10.1038/s44172-025-00430-5"
+                target="_blank"
+                >doi.org/10.1038/s44172-025-00430-5</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">04</span>
+            <div class="reading-item__text">
+              Colvin, T., Karcz, J., & Wusk, M. (2024). Cost and benefit
+              analysis of mitigating, tracking, and remediating orbital debris:
+              Phase 2. NASA Office of Technology, Policy, and Strategy.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">05</span>
+            <div class="reading-item__text">
+              ESA. (n.d.). ClearSpace-1.
+              <a
+                href="https://www.esa.int/Space_Safety/ClearSpace-1"
+                target="_blank"
+                >esa.int</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">06</span>
+            <div class="reading-item__text">
+              ESA. (n.d.). ESA commissions world's first space debris removal.
+              <a
+                href="https://www.esa.int/Space_Safety/Clean_Space/ESA_commissions_world_s_first_space_debris_removal"
+                target="_blank"
+                >esa.int</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">07</span>
+            <div class="reading-item__text">
+              European Space Agency. (2023, November). New space debris
+              mitigation policy and requirements in effect.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">08</span>
+            <div class="reading-item__text">
+              European Space Policy Institute. (2024). A party for everyone?
+              Analysing international efforts in space debris mitigation (ESPI
+              Report 93).
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">09</span>
+            <div class="reading-item__text">
+              Hoffpauir, D. (2016, July 11). Space debris: Understanding the
+              risks to NASA spacecraft. NASA.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">10</span>
+            <div class="reading-item__text">
+              NASA. (2026, January 22). Orbital debris.
+              <a
+                href="https://www.nasa.gov/reference/jsc-orbital-debris"
+                target="_blank"
+                >nasa.gov</a
+              >
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">11</span>
+            <div class="reading-item__text">
+              OECD. (2024).
+              <em
+                >The economics of space sustainability: Delivering economic
+                evidence to guide government action.</em
+              >
+              OECD Publishing.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">12</span>
+            <div class="reading-item__text">
+              Okada, N. (2025, February 4). Global implementation of active
+              debris removal (ADR). 62nd Session of the UN COPUOS Scientific and
+              Technical Subcommittee, UNOOSA.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">13</span>
+            <div class="reading-item__text">
+              United Nations Office for Outer Space Affairs. (2019). Guidelines
+              for the long-term sustainability of outer space activities.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">14</span>
+            <div class="reading-item__text">
+              U.S. Government. (2019). U.S. Government orbital debris mitigation
+              standard practices. NASA.
+            </div>
+          </div>
+
+          <div class="reading-item">
+            <span class="reading-item__num">15</span>
+            <div class="reading-item__text">
+              Yap, N., & Truffer, B. (2024). Tipping points of space debris in
+              low Earth orbit.
+              <em>International Journal of the Commons,</em> 18(1).
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../assets/js/nav.js"></script>
+  </body>
+</html>
